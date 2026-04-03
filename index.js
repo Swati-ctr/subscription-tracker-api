@@ -28,8 +28,16 @@ app.use(express.json());
 // ===============================
 
 // default route — check if server is running
+//  new
 app.get("/", (req, res) => {
-    res.send("Server is running properly");
+    res.json({
+        message: "Subscription Tracker API is Live!",
+        version: "1.0.0",
+        endpoints: {
+            users: "/api/users",
+            subscriptions: "/api/subscriptions"
+        }
+    });
 });
 
 // user routes — register and login
