@@ -4,7 +4,7 @@
 
 const jwt = require("jsonwebtoken");
 
-const JWT_SECRET = "mysecretkey";
+const JWT_SECRET = process.env.JWT_SECRET;
 
 // protect middleware — verifies JWT token before allowing access to routes
 const protect = (req, res, next) => {
