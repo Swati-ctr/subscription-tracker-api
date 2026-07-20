@@ -18,7 +18,7 @@ const createSubscription = async (req, res) => {
 
         const subscription = await Subscription.create({
             name,
-            plan,
+            plan:plan?.toLowerCase(),
             price,
             billingCycle,
             renewalDate,
